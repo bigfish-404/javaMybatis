@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuration核心配置文件-->
+<!--mybatis的默认配置文件，不要去修改他-->
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <!--数据库的驱动-->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <!--数据库的url-->
+                <property name="url" value="jdbc:mysql://127.0.0.1:3306/mybatis?user=root"/>
+                <!--数据库的密码和账户-->
+                <property name="username" value="root"/>
+                <property name="password" value="Az.5212365"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--主程序的每一个mapper.xml都要写一个，否则会报错-->
+    <mappers>
+        <mapper resource="dao/UserMapper.xml"/>
+    </mappers>
+</configuration>
